@@ -10,6 +10,8 @@ function App() {
   const [board, setBoard] = useState(boardDefault);
   const [currAttempt, setCurrAttempt] = useState({ attempt: 0, letterPos: 0 });
 
+  const correctWord = "RIGHT";
+
   const onSelectLetter = (keyVal, attempt, letterPos) => {
     if (letterPos > 4) {
       attempt++;
@@ -38,9 +40,15 @@ function App() {
   };
 
   const onEnter = (attempt, letterPos) => {
-    if (letterPos !== 5) return;
-    setCurrAttempt({ attempt: attempt, letterPos: letterPos });
-    console.log("enter key clicked.");
+    if (letterPos !== 5) {
+      return;
+    } else if (letterPos === 5) {
+      attempt++;
+      letterPos = 0;
+      setCurrAttempt({ attempt: attempt, letterPos: letterPos });
+    } else {
+      setCurrAttempt({ attempt: attempt, letterPos: letterPos });
+    }
   };
 
   return (
@@ -57,6 +65,7 @@ function App() {
           onSelectLetter,
           onDelete,
           onEnter,
+          correctWord,
         }}
       >
         <div className="game">
