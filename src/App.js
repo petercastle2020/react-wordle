@@ -9,6 +9,7 @@ export const AppContext = createContext();
 function App() {
   const [board, setBoard] = useState(boardDefault);
   const [currAttempt, setCurrAttempt] = useState({ attempt: 0, letterPos: 0 });
+  const [disabledLetters, setDisabledLetters] = useState([]);
 
   const correctWord = "RIGHT";
 
@@ -45,6 +46,18 @@ function App() {
     } else if (letterPos === 5) {
       attempt++;
       letterPos = 0;
+
+      //check to see if the word exist, and if the player won.
+      let currWord = "";
+
+      for (let i = 0; i < 5; i++) {
+        currWord += board[currAttempt.attempt][i];
+      }
+
+      if (currWord === correctWord) {
+        console.log("You Won, Congratulation.");
+      }
+
       setCurrAttempt({ attempt: attempt, letterPos: letterPos });
     } else {
       setCurrAttempt({ attempt: attempt, letterPos: letterPos });
@@ -66,6 +79,8 @@ function App() {
           onDelete,
           onEnter,
           correctWord,
+          disabledLetters,
+          setDisabledLetters,
         }}
       >
         <div className="game">
