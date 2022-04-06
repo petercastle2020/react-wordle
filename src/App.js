@@ -21,16 +21,14 @@ function App() {
   const correctWord = "RIGHT";
 
   const onSelectLetter = (keyVal, attempt, letterPos) => {
-    if (letterPos > 4) {
-      attempt++;
-      letterPos = 0;
-    }
-    const newBoard = [...board];
-    newBoard[attempt][letterPos] = keyVal;
-    setBoard(newBoard);
-    letterPos++;
+    if (letterPos < 5) {
+      const newBoard = [...board];
+      newBoard[attempt][letterPos] = keyVal;
+      setBoard(newBoard);
+      letterPos++;
 
-    setCurrAttempt({ attempt: attempt, letterPos: letterPos });
+      setCurrAttempt({ attempt: attempt, letterPos: letterPos });
+    }
   };
 
   const onDelete = (attempt, letterPos) => {
