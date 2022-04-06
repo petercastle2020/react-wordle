@@ -6,10 +6,21 @@ function GameOver() {
     useContext(AppContext);
   return (
     <div className="gameOver">
-      <h3>{gameOver.guessedWord ? "You won !" : "You Lost..."}</h3>
-      <h1>Correct word was:{correctWord}</h1>
+      <h2 id={gameOver.guessedWord ? "win" : "lost"}>
+        {gameOver.guessedWord ? "You won !" : "You Lost..."}
+      </h2>
+      {gameOver.guessedWord === false ? (
+        <h1>
+          Correct word: <span id="win">{correctWord}</span>
+        </h1>
+      ) : null}
+
       {gameOver.guessedWord && (
-        <h3> You guessed in {currAttempt.attempt} attempts</h3>
+        <h2>
+          {" "}
+          You guessed in {currAttempt.attempt}{" "}
+          {currAttempt.attempt === 1 ? "attempt" : "attempts"}
+        </h2>
       )}
     </div>
   );

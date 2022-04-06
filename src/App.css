@@ -7,6 +7,12 @@
   color: white;
 }
 
+h2,
+h1 {
+  font-family: Helvetica, Arial, sans-serif;
+  color: white;
+}
+
 body {
   padding: 0%;
   margin: 0;
@@ -39,7 +45,6 @@ nav h1 {
 .board {
   width: 450px;
   height: 550px;
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
 }
@@ -55,6 +60,7 @@ nav h1 {
   flex: 33%;
   height: 100%;
   border: 1px solid grey;
+
   margin: 5px;
   display: grid;
   place-items: center;
@@ -135,4 +141,12 @@ nav h1 {
 
 #almost {
   background-color: #b49f39;
+}
+
+#lost {
+  color: #b60000;
+}
+
+#win {
+  color: #00b600;
 }
