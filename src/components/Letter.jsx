@@ -1,4 +1,3 @@
-import { getQueriesForElement } from "@testing-library/react";
 import React, { useContext, useEffect } from "react";
 import { AppContext } from "../App";
 
@@ -21,6 +20,8 @@ function Letter({ letterPos, attemptVal }) {
   const almost = !correct && letter !== "" && correctWord.includes(letter);
 
   const error = !correct && !almost && letter !== "";
+
+  // .grey-overlay .yellow-overlay .green-overlay
 
   let letterState =
     currAttempt.attempt > attemptVal &&
@@ -51,7 +52,7 @@ function Letter({ letterPos, attemptVal }) {
   }, [currAttempt.attempt]);
 
   return (
-    <div className="letter" id={letterState}>
+    <div className={"letter" + " " + letterState} id={letterState}>
       {letter}
     </div>
   );

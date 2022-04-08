@@ -60,7 +60,6 @@ nav h1 {
   flex: 33%;
   height: 100%;
   border: 1px solid grey;
-
   margin: 5px;
   display: grid;
   place-items: center;
@@ -135,6 +134,10 @@ nav h1 {
   background-color: #3a393c;
 }
 
+#error {
+  background-color: #3a393c;
+}
+
 #right {
   background-color: #528d4e;
 }
@@ -143,10 +146,50 @@ nav h1 {
   background-color: #b49f39;
 }
 
+/* overlay colors */
+
+.error {
+  background-color: #3a393c !important;
+  border: none !important;
+  animation: 0.5s linear flipAnimation;
+}
+
+.almost {
+  background-color: #b49f39 !important;
+  border: none !important;
+  animation: 0.5s linear flipAnimation;
+}
+
+.correct {
+  background-color: #528d4e !important;
+  border: none !important;
+  animation: 0.5s linear flipAnimation;
+}
+
+/* end game msg */
+
 #lost {
   color: #b60000;
 }
 
 #win {
   color: #00b600;
+}
+
+.flip {
+  animation: 0.5s linear flipAnimation;
+}
+
+@keyframes flipAnimation {
+  0% {
+    transform: rotateX(0deg);
+  }
+
+  50% {
+    transform: rotateX(90deg);
+  }
+
+  100% {
+    transform: rotateX(0deg);
+  }
 }
