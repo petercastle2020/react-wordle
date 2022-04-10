@@ -33,6 +33,17 @@ nav h1 {
   color: white;
   font-size: 45px;
 }
+
+.alert {
+  top: 6%;
+  right: 30%;
+  width: 40%;
+  display: block;
+  position: absolute;
+  border-radius: 5px;
+  background-color: #3a393c;
+}
+
 .game {
   width: 100vw;
   height: calc(100vh - 170px);

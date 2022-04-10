@@ -4,7 +4,7 @@ import { AppContext } from "../App";
 function Letter({ letterPos, attemptVal }) {
   const {
     board,
-    correctWord,
+    randomWord,
     currAttempt,
     rightLetters,
     almostLetters,
@@ -15,13 +15,12 @@ function Letter({ letterPos, attemptVal }) {
 
   const letter = board[attemptVal][letterPos];
 
-  const correct = correctWord[letterPos] === letter;
+  const correct = randomWord.toUpperCase()[letterPos] === letter;
 
-  const almost = !correct && letter !== "" && correctWord.includes(letter);
+  const almost =
+    !correct && letter !== "" && randomWord.toUpperCase().includes(letter);
 
   const error = !correct && !almost && letter !== "";
-
-  // .grey-overlay .yellow-overlay .green-overlay
 
   let letterState =
     currAttempt.attempt > attemptVal &&

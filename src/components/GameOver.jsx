@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { AppContext } from "../App";
 
 function GameOver() {
-  const { gameOver, setGameOver, correctWord, currAttempt } =
+  const { gameOver, setGameOver, randomWord, currAttempt } =
     useContext(AppContext);
   return (
     <div className="gameOver">
@@ -11,7 +11,7 @@ function GameOver() {
       </h2>
       {gameOver.guessedWord === false ? (
         <h1>
-          Correct word: <span id="win">{correctWord}</span>
+          Correct word: <span id="win">{randomWord}</span>
         </h1>
       ) : null}
 
