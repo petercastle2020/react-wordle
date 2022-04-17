@@ -80,18 +80,6 @@ nav h1 {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-#correct {
-  background-color: #528d4e;
-}
-
-#almost {
-  background-color: #b49f39;
-}
-
-#error {
-  background-color: #3a393c;
-}
-
 .keyboard {
   width: 700px;
   height: 300px;
@@ -139,13 +127,9 @@ nav h1 {
   width: 100px;
 }
 
-/* Custom Key Color */
+/* Key Custom Color */
 
 #disabled {
-  background-color: #3a393c;
-}
-
-#error {
   background-color: #3a393c;
 }
 
@@ -157,7 +141,7 @@ nav h1 {
   background-color: #b49f39;
 }
 
-/* overlay colors */
+/* Letters overlay colors */
 
 .error {
   background-color: #3a393c !important;
